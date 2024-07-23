@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "Nelson Carrero",
   "license": "ISC",
-  "description": "API Rest para gestor de inventario"
+  "description": "API Rest para gestor de inventario",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
