@@ -12,6 +12,7 @@ const bdConexion = require("./databases/bd")
 
 //Importar rutas
 var indexRouter = require("./routes/index")
+var authRouter = require("./routes/auth")
 
 //asignar express a una variable
 var app = express()
@@ -33,6 +34,7 @@ app.use(cookieParser())
 
 //Asignacion de rutas
 app.use("/", indexRouter)
+app.use("/auth", authRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

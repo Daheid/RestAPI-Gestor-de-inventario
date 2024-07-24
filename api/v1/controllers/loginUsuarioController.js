@@ -1,6 +1,6 @@
 const Usuario = require("../models/usuarios")
 const validarLogin = require("../scripts/validarLogin")
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
 const login = async (req, res, next) => {
