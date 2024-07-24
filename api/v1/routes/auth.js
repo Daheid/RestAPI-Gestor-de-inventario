@@ -5,6 +5,6 @@ var router = express.Router()
 const login = require("./../controllers/loginUsuarioController")
 const verificarToken = require("./../scripts/verificardorToken")
 
-router.post("/login", verificarToken, login)
+router.post("/login", login)
 
 module.exports = router
