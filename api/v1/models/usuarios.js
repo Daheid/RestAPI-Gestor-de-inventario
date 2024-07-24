@@ -5,9 +5,9 @@ const usuariosSchema = new mongoose.Schema(
     nombre: { type: string, required: true },
     apellido: { type: string, required: true },
     cedula: { type: string, required: true, unique: true },
-    telefono: { type: string, required: true, unique: true },
+    telefono: { type: Number, required: true, unique: true },
     correo: { type: string, required: true, unique: true },
-    password: { type: string, required: true },
+    password: { type: string, required: true, minlength: 6 },
     rol: [
       { ref: "roles", type: mongoose.Schema.Types.ObjectId },
       { require: true },
