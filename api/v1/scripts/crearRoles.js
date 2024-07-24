@@ -6,8 +6,8 @@ module.exports = async () => {
 
     if (contador > 0) return
     const valor = await Promise.all([
-      new roles({ nombre: "User" }).save(),
-      new roles({ nombre: "Admin" }).save(),
+      new roles({ rol: "User" }).save(),
+      new roles({ rol: "Admin" }).save(),
     ])
 
     console.log("valor", "Roles Creados")

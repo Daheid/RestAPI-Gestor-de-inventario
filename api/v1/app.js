@@ -4,6 +4,9 @@ var path = require("path")
 var cookieParser = require("cookie-parser")
 var logger = require("morgan")
 
+//importar script de crear roles
+const crearRoles = require("./scripts/crearRoles")
+
 //importar la conexion con la base ded atos
 const bdConexion = require("./databases/bd")
 
@@ -15,6 +18,8 @@ var app = express()
 
 //conexion con la base de datos
 bdConexion()
+//crar roles
+crearRoles()
 
 //
 app.use(logger("dev"))
