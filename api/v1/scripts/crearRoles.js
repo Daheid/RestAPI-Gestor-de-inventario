@@ -10,7 +10,7 @@ module.exports = async () => {
       new roles({ rol: "Admin" }).save(),
     ])
 
-    console.log("valor", "Roles Creados")
+    console.log(valor, "Roles Creados")
   } catch (err) {
     console.log(err)
   }
