@@ -4,12 +4,17 @@ var path = require("path")
 var cookieParser = require("cookie-parser")
 var logger = require("morgan")
 
+//importar la conexion con la base ded atos
+const bdConexion = require("./databases/bd")
+
 //Importar rutas
 var indexRouter = require("./routes/index")
-var usersRouter = require("./routes/users")
 
 //asignar express a una variable
 var app = express()
+
+//conexion con la base de datos
+bdConexion()
 
 //
 app.use(logger("dev"))
