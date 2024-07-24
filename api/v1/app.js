@@ -4,12 +4,23 @@ var path = require("path")
 var cookieParser = require("cookie-parser")
 var logger = require("morgan")
 
+//importar script de crear roles
+const crearRoles = require("./scripts/crearRoles")
+
+//importar la conexion con la base ded atos
+const bdConexion = require("./databases/bd")
+
 //Importar rutas
 var indexRouter = require("./routes/index")
-var usersRouter = require("./routes/users")
+var authRouter = require("./routes/auth")
 
 //asignar express a una variable
 var app = express()
+
+//conexion con la base de datos
+bdConexion()
+//crar roles
+crearRoles()
 
 //
 app.use(logger("dev"))
@@ -23,6 +34,7 @@ app.use(cookieParser())
 
 //Asignacion de rutas
 app.use("/", indexRouter)
+app.use("/auth", authRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
