@@ -33,7 +33,7 @@ const login = async (req, res, next) => {
     expiresIn: 86400,
   })
 
-  res.status(200).json({ toke: token })
+  res.status(200).json({ token: token })
 }
 
 module.exports = login

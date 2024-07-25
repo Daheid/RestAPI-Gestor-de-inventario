@@ -3,6 +3,7 @@ var express = require("express")
 var path = require("path")
 var cookieParser = require("cookie-parser")
 var logger = require("morgan")
+const cors = require("cors")
 
 //importar script de crear roles
 const crearRoles = require("./scripts/crearRoles")
@@ -16,6 +17,8 @@ var authRouter = require("./routes/auth")
 
 //asignar express a una variable
 var app = express()
+
+app.use(cors())
 
 //conexion con la base de datos
 bdConexion()
