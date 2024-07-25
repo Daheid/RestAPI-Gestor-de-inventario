@@ -36,8 +36,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 //Asignacion de rutas
-app.use("/", indexRouter)
-app.use("/auth", authRouter)
+app.use("/api/v1", indexRouter)
+app.use("/api/v1/auth", authRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
