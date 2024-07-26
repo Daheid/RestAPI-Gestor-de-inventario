@@ -1,5 +1,10 @@
 const path = require("path")
 
+const paths = [
+  path.join(__dirname, "./routes/*.js"),
+  path.join(__dirname, "./models/*.js"),
+]
+
 module.exports = {
   definition: {
     openapi: "3.0.0",
@@ -14,5 +19,5 @@ module.exports = {
       },
     ],
   },
-  apis: [`${path.join(__dirname, "./routes/*.js")}`],
+  apis: paths,
 }
