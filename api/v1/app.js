@@ -11,6 +11,11 @@ const crearRoles = require("./scripts/crearRoles")
 //importar la conexion con la base ded atos
 const bdConexion = require("./databases/bd")
 
+//importar swagger
+const swaggerUi = require("swagger-ui-express")
+const swaggerJsDoc = require("swagger-jsdoc")
+const swaggerSpec = require("./swagger/swagger")
+
 //Importar rutas
 var indexRouter = require("./routes/index")
 var authRouter = require("./routes/auth")
@@ -36,6 +41,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 //Asignacion de rutas
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc(swaggerSpec)))
 app.use("/api/v1", indexRouter)
 app.use("/api/v1/auth", authRouter)
 
