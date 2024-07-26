@@ -1,8 +1,8 @@
 const path = require("path")
 
 const paths = [
-  path.join(__dirname, "./routes/*.js"),
-  path.join(__dirname, "./models/*.js"),
+  path.join(__dirname, "./../routes/*.js"),
+  path.join(__dirname, "./../models/*.js"),
 ]
 
 module.exports = {
