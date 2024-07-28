@@ -41,7 +41,11 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 //Asignacion de rutas
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc(swaggerSpec)))
+app.use(
+  "/documentacion",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerJsDoc(swaggerSpec))
+)
 app.use("/api/v1", indexRouter)
 app.use("/api/v1/auth", authRouter)
 
