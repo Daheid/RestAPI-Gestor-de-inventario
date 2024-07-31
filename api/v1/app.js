@@ -19,6 +19,7 @@ const swaggerSpec = require("./swagger/swagger")
 //Importar rutas
 var indexRouter = require("./routes/index")
 var authRouter = require("./routes/auth")
+var prductosRouter = require("./routes/productos")
 
 //asignar express a una variable
 var app = express()
@@ -48,6 +49,7 @@ app.use(
 )
 app.use("/api/v1", indexRouter)
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/productos", prductosRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
