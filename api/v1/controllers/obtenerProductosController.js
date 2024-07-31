@@ -1,11 +1,16 @@
 const Productos = require("./../models/productos")
 
-const Producto = async (res, res, next) => {
-  //Traer datos de la base de datos
-  const productos = await Productos.find()
-  if (!productos) return res.status(200).json({ mensaje: "No hay productos" })
-
-  res.json(productos)
+const Producto = async (req, res, next) => {
+  try {
+    //trear datos
+    const productos = await Productos.find()
+    if (!productos || productos.length == 0) {
+      return res.status(404).json({ mensaje: "No hay productos" })
+    }
+    res.json(productos)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
-module.exports = Productos
+module.exports = { Producto }
