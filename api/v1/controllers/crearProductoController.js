@@ -3,6 +3,10 @@ const Producto = require("./../models/productos")
 module.exports = async (req, res, next) => {
   try {
     const { nombre, precio, cantidad, descripcion } = req.body
+    if (!nombre || !precio || !cantidad || !descripcion) {
+      return res.json({ error: "Todos los campos son requeridos" })
+    }
+
     const nuevoProducto = new Producto({
       nombre,
       precio,
