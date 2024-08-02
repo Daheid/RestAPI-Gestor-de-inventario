@@ -12,4 +12,9 @@ router.get("/", verificarToken, Producto)
 //EndPoint Crear productos
 router.post("/", verificarToken, crearProducto)
 
+//EndPoint Actualizar productos
+router.put("/", (req, res, next) => {
+  res.json({ mensaje: "actualizar productos" })
+})
+
 module.exports = router
