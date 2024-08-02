@@ -1,8 +1,10 @@
 var express = require("express")
 var router = express.Router()
+const verificarToken = require("./../scripts/verificardorToken")
 
-router.get("/", function (req, res, next) {
-  res.json({messege: "aqui productos"})
-})
+//middleware
+const { Producto } = require("./../controllers/obtenerProductosController")
+
+router.get("/", verificarToken, Producto)
 
 module.exports = router

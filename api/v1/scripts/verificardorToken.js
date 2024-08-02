@@ -7,9 +7,9 @@ const verificarToken = async (req, res, next) => {
 
     if (!token) return res.status(400).json({ error: "No tiene sesion activa" })
 
-    const decoded = jwt.verify(token, proccess.env.TOKEN)
+    const decoded = jwt.verify(token, process.env.TOKEN)
 
-    req.idUser = dedoced.id
+    req.idUser = decoded.id
 
     const user = await Usuario.findById(req.idUser, { password: 0 })
 
