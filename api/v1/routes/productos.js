@@ -10,6 +10,6 @@ const crearProducto = require("./../controllers/crearProductoController")
 router.get("/", verificarToken, Producto)
 
 //EndPoint Crear productos
-router.post("/", crearProducto)
+router.post("/", verificarToken, crearProducto)
 
 module.exports = router
