@@ -1,0 +1,18 @@
+const Producto = require("./../models/productos")
+
+module.exports = async (req, res, next) => {
+  try {
+    const { nombre, precio, cantidad, descripcion } = req.body
+    const nuevoProducto = new Producto({
+      nombre,
+      precio,
+      cantidad,
+      descripcion,
+    })
+    await nuevoProducto.save()
+
+    res.status(201).json(nuevoProducto)
+  } catch (err) {
+    res.status(500).json({ error: err })
+  }
+}
