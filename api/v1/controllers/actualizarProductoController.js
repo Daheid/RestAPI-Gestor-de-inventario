@@ -5,8 +5,6 @@ module.exports = async (req, res, next) => {
     if (!req.body || Object.keys(req.body).length === 0) {
       return res.status(400).json({ mensaje: "No se recibieron datos." })
     }
-
-    console.log("ID del producto a actualizar:", req.params.id)
     const actualizado = await Producto.findByIdAndUpdate(
       req.params.id,
       req.body,
