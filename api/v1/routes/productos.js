@@ -18,5 +18,5 @@ router.post("/", verificarToken, crearProducto)
 router.put("/:id", verificarToken, actualizarProducto)
 
 //EndPoint Eliminar productos
-router.delete("/:id", eliminarProducto)
+router.delete("/:id", verificarToken, eliminarProducto)
 module.exports = router
