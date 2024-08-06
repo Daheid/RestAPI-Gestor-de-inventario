@@ -6,6 +6,7 @@ const verificarToken = require("./../scripts/verificardorToken")
 const { Producto } = require("./../controllers/obtenerProductosController")
 const crearProducto = require("./../controllers/crearProductoController")
 const actualizarProducto = require("./../controllers/actualizarProductoController")
+const eliminarProducto = require("./../controllers/eliminarProductoController")
 
 //EndPoint Obtener todos los productos
 router.get("/", verificarToken, Producto)
@@ -15,4 +16,7 @@ router.post("/", verificarToken, crearProducto)
 
 //EndPoint Actualizar productos
 router.put("/:id", verificarToken, actualizarProducto)
+
+//EndPoint Eliminar productos
+router.delete("/:id", eliminarProducto)
 module.exports = router
