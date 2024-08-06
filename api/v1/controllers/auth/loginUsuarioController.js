@@ -1,5 +1,5 @@
-const Usuario = require("../models/usuarios")
-const validarLogin = require("../scripts/validarLogin")
+const Usuario = require("../../models/usuarios")
+const validarLogin = require("../../scripts/validarLogin")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
