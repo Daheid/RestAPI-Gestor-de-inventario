@@ -10,7 +10,7 @@ module.exports = router
 //Documentacion de la ruta /auth/login
 /**
  * @swagger
- * "api/v1/auth/login":
+ * "/api/v1/auth/login":
  *  post:
  *    summary: Autenticar al usuario para acceder al sistema
  *    tags: [auth]
@@ -22,17 +22,19 @@ module.exports = router
  *            type: object
  *            properties:
  *              correo:
- *                type: email
+ *                type: string
+ *                format: email
  *                description: Correo de acceso
  *              password:
- *                type: password
+ *                type: string
+ *                format: password
  *                description: clave de acceso
  *            required:
  *              - correo
  *              - password
  *            example:
- *              correo: probando@gmail.com
- *              password: 123456
+ *              correo: a@gmail.com
+ *              password: "123456"
  *
  *
  *    responses:
