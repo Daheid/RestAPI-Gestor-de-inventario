@@ -1,7 +1,7 @@
 const path = require("path")
 
 const paths = [
-  path.join(__dirname, "./../routes/*.js"),
+  path.join(__dirname, "./../documentacion/*.js"),
   path.join(__dirname, "./../models/*.js"),
 ]
 
