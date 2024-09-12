@@ -1,4 +1,5 @@
 const Usuario = require("../../models/usuarios")
+const Rol = require("../../models/roles")
 const validarLogin = require("../../scripts/validarLogin")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -12,7 +13,7 @@ const login = async (req, res, next) => {
   //buscar coincidencia de email
   const validarUsuario = await Usuario.findOne({
     correo: req.body.correo,
-  }).populate("rol")
+  })
 
   if (!validarUsuario) {
     return res.status(400).json({ token: null, error: "Email no encontrado" })

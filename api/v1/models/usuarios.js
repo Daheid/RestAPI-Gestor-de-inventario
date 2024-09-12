@@ -3,9 +3,6 @@ const mongoose = require("mongoose")
 const usuariosSchema = new mongoose.Schema(
   {
     nombre: { type: String, required: true },
-    apellido: { type: String, required: true },
-    cedula: { type: String, required: true, unique: true },
-    telefono: { type: Number, required: true, unique: true },
     correo: { type: String, required: true, unique: true },
     password: { type: String, required: true, minlength: 6 },
     rol: [
@@ -32,15 +29,6 @@ module.exports = mongoose.model("usuarios", usuariosSchema)
  *        nombre:
  *          type: string
  *          descripcion: Primer Nombre del usuario
- *        apellido:
- *          type: string
- *          descripcion: Primer apellido del usuario
- *        cedula:
- *          type: number
- *          descripcion: Numero de cedula de identidad
- *        telefono:
- *          type: number
- *          descripcion: Numero celular personal
  *        correo:
  *          type: email
  *          descripcion: Correo electronico para acceder al sistema
