@@ -37,8 +37,15 @@
  *                type: string
  *                description: Descripción del producto
  *          example:
- *            nombre: laptop
+ *            nombre: "laptop"
  *            precio: 300
  *            cantidad: 99
- *            descripcion: Laptop compacta perfecta para trabajar
+ *            descripcion: "Laptop compacta perfecta para trabajar"
+ *    responses:
+ *      200:
+ *        description: Producto actualizado con éxito
+ *      400:
+ *        description: Solicitud inválida (por ejemplo, datos incorrectos)
+ *      404:
+ *        description: Producto no encontrado
  */

@@ -12,7 +12,7 @@ const eliminarProducto = require("./../controllers/productos/eliminarProductoCon
 const eliminarVariosProductos = require("./../controllers/productos/EliminarVariosProductosController")
 
 //EndPoint Obtener todos los productos
-router.get("/", verificarToken, Producto)
+router.get("/", Producto)
 
 //EndPoint Crear productos
 router.post("/", verificarToken, crearProducto)

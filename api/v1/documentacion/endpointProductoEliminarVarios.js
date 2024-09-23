@@ -22,8 +22,17 @@
  *              properties:
  *                id:
  *                  type: string
- *                  description: Identificador del producto
- *            example:
- *              - id: "id"
- *              - id: "id"
+ *                  description: Identificador del producto a eliminar
+ *          example:
+ *            - id: "id1"
+ *            - id: "id2"
+ *    responses:
+ *      204:
+ *        description: Productos eliminados con éxito
+ *      400:
+ *        description: Solicitud mal formada
+ *      404:
+ *        description: Algunos productos no encontrados
+ *      401:
+ *        description: No autorizado
  */

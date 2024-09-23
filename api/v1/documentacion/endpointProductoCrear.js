@@ -6,7 +6,7 @@
  *    tags: [Producto]
  *    parameters:
  *      - in: header
- *        name: x-acess-token
+ *        name: x-access-token
  *        required: true
  *        schema:
  *          type: string
@@ -34,10 +34,27 @@
  *            - nombre
  *            - precio
  *            - cantidad
- *            - descipcion
+ *            - descripcion
  *          example:
  *            nombre: laptop
  *            precio: 300
  *            cantidad: 99
  *            descripcion: Laptop compacta perfecta para trabajar
+ *    responses:
+ *       201:
+ *         description: Producto creado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               $ref: '#/components/schemas/Productos'
+ *       409:
+ *         description: El producto ya se encuentra registrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               $ref: '#/components/schemas/Productos'
+ *       404:
+ *         description: Todos los campos son requeridos
  */
