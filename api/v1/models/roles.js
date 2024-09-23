@@ -28,5 +28,5 @@ module.exports = mongoose.model("Roles", rolSchema)
  *        - rol
  *      example:
  *        _id: "57e337ea679ob358ad6aca61"
- *        rol: Administrador
+ *        rol: "Administrador"
  */
