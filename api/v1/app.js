@@ -22,6 +22,7 @@ var authRouter = require("./routes/auth")
 var prductosRouter = require("./routes/productos")
 var proveedoresRouter = require("./routes/proveedores")
 var usuariosRouter = require("./routes/usuarios")
+var rolesRouter = require("./routes/roles")
 
 //asignar express a una variable
 var app = express()
@@ -54,6 +55,7 @@ app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/productos", prductosRouter)
 app.use("/api/v1/proveedores", proveedoresRouter)
 app.use("/api/v1/usuarios", usuariosRouter)
+app.use("/api/v1/roles", rolesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
